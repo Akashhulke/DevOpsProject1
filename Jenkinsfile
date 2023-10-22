@@ -25,8 +25,7 @@ pipeline {
                     sh "docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD"
                     customImage.push()
                     sh "docker logout"    
-                    }   
-                }
+                }   
             }
         }
     }
