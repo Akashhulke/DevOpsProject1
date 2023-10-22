@@ -13,16 +13,18 @@ pipeline {
                     sh "${env.JAVA_HOME}/bin/javac HelloWorld.java"
                     
                     // Build the Docker image
-                    def customImage = docker.build("akashhulke/helloword:${env.BUILD_ID}")
+                    customImage = docker.build("akashhulke/helloword:${env.BUILD_ID}")
                 }
             }
         }
         stage('Push Docker Image to Docker Hub') {
             steps {
                 script {
+                    // Access customImage here
                     customImage.push()
                 }
             }
         }
     }
 }
+
