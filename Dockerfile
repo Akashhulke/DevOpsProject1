@@ -7,8 +7,5 @@ WORKDIR /app
 # Copy the current directory contents into the container at /app
 COPY . /app
 
-# Compile the Java program
-RUN javac HelloWorld.java
-
-# Run the Java program
+# Specify the default command to run when the container starts
 CMD ["java", "HelloWorld"]
